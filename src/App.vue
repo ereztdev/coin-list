@@ -2,18 +2,18 @@
   <div id="app">
     <!--<img src="./assets/logo.png">-->
     <HelloWorld msg="Welcome to Your Vue.js App"/>
-      <CoinList></CoinList>
+      <CoinListPrices></CoinListPrices>
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
-import CoinList from "./components/CoinList";
+import CoinListPrices from "./components/CoinListPrices";
 
 export default {
   name: 'app',
   components: {
-      CoinList,
+      CoinListPrices,
     HelloWorld
   }
 }

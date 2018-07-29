@@ -16,18 +16,23 @@
             <!--</tr>-->
             </tbody>
         </table>
+        <select class="coin_list form-control" name="coin_list">
+            <option v-for="(coin, index) in coinsList"
+        </select>
     </div>
 </template>
 
 <script>
     import { mapState } from 'vuex'
     export default {
-        name: "CoinList",
+        name: "CoinListPrices",
         mounted() {
-            this.$store.dispatch(('loadCoins'))
+            this.$store.dispatch('loadCoins');
+            this.$store.dispatch('getCoinList');
         },
         computed: mapState([
-            'coins'
+            'coins',
+            'coinsList'
         ])
     }
 </script>
