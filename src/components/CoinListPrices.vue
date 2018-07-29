@@ -1,24 +1,18 @@
 <template>
     <div class="container">
-        <table class="table table-striped">
-            <thead>
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Price</th>
-            </tr>
-            </thead>
-            <tbody>
-            <!--<tr v-for="coin in coins" :key="coin.id">-->
-                <!--<td>{{ coin.id }}</td>-->
-                <!--<td>{{ coin.name }}</td>-->
-                <!--<td>{{ coin.price }}</td>-->
-            <!--</tr>-->
-            </tbody>
-        </table>
+        <div id="priceFrom">
         <select class="coin_list form-control" name="coin_list">
-            <option v-for="(coin, index) in coinsList"
+            <option value="">Choose Your Coin</option>
+            <option v-bind:key="(id)" v-for="(coin, id) in coin_list">{{coin.name}}-{{coin.symbol}}</option>
         </select>
+        </div>
+        <h2 class="vs">VS</h2>
+        <div id="priceTo">
+        <select class="coin_list form-control" name="coin_list">
+            <option value="">Choose Your Coin</option>
+            <option v-bind:key="(id)" v-for="(coin, id) in coin_list">{{coin.name}}-{{coin.symbol}}</option>
+        </select>
+        </div>
     </div>
 </template>
 
@@ -32,8 +26,8 @@
         },
         computed: mapState([
             'coins',
-            'coinsList'
-        ])
+            'coin_list'
+        ]),
     }
 </script>
 
@@ -45,4 +39,11 @@
     li {
         margin: 0 10px;
     }
+    #priceFrom, #priceTo, .vs{
+        display: inline-block;
+    }
+    .vs{
+        margin: 0 50px;
+    }
+
 </style>

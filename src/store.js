@@ -28,7 +28,6 @@ export default new Vuex.Store({
               .get(HOST+'/api/coins/?coinsFrom=LTC&coinsTo=ETH')
               .then(r => r.data)
               .then(coins =>{
-                  // console.log(coins.DISPLAY);
                   commit('SET_COINS', coins)
               })
       },
@@ -36,7 +35,8 @@ export default new Vuex.Store({
           axios.get(HOST+'/api/coin_list')
               .then(r => r.data)
               .then(coin_list =>{
-                  commit('SET_COIN_LIST', coin_list)
+                  console.log(coin_list.data);
+                  commit('SET_COIN_LIST', coin_list.data)
               })
       }
   }
