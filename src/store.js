@@ -41,11 +41,6 @@ export default new Vuex.Store({
                   }else{
                       commit('SET_PAIR', 'this exchange does not exist in current form, try the reverse rate');
                   }
-                  // console.log(coinExRate.DISPLAY);
-                  // if (coinExRate.DISPLAY === {}) {
-                  //     return false;
-                  // }
-                  //
               })
       },
       getCoinList({commit}){
