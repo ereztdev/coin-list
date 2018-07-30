@@ -18,6 +18,7 @@ export default new Vuex.Store({
   mutations: {
       SET_PAIR(state, coinExRate){
           state.coinExRate = coinExRate;
+          console.log(this.state.coinExRate)
       },
       SET_COIN_LIST(state, coin_list){
           state.coin_list = coin_list;
@@ -32,24 +33,25 @@ export default new Vuex.Store({
   },
   actions: {
       loadRate ({ commit }){
-
-
-          axios
-              .get(HOST+'/api/coins_rate/?coinsFrom='+this.state.coinFrom+'&coinsTo='+this.state.coinTo)
+          axios.get(HOST+'/api/coins_rate/?coinsFrom='+this.state.coinFrom+'&coinsTo='+this.state.coinTo)
               .then(r => r.data)
               .then(coinExRate =>{
-                  // let regExp = /=\(([0-9|.]+)\)/;
-                  // let matches = regExp.exec(coinExRate.DISPLAY[this.state.coinFrom][this.state.coinTo].PRICE);
-                  // let result = matches[1];
-                  commit('SET_PAIR', coinExRate.DISPLAY[this.state.coinFrom][this.state.coinTo].PRICE);
-                  // console.log(coinExRate.DISPLAY[coinFromResponse][coinToResponse].PRICE)
+                  if (this.state.coinFrom in coinExRate.DISPLAY){
+                      commit('SET_PAIR', coinExRate.DISPLAY[this.state.coinFrom][this.state.coinTo].PRICE);
+                  }else{
+                      commit('SET_PAIR', 'this exchange does not exist in current form, try the reverse rate');
+                  }
+                  // console.log(coinExRate.DISPLAY);
+                  // if (coinExRate.DISPLAY === {}) {
+                  //     return false;
+                  // }
+                  //
               })
       },
       getCoinList({commit}){
           axios.get(HOST+'/api/coin_list')
               .then(r => r.data)
               .then(coin_list =>{
-                  // console.log(coin_list.data);
                   commit('SET_COIN_LIST', coin_list.data)
               })
       },
