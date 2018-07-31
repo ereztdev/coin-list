@@ -1,8 +1,10 @@
 <template>
   <div id="app">
     <!--<img src="./assets/logo.png">-->
-    <HelloWorld msg="Crypto Exchange API demo"/>
-      <CoinListPrices></CoinListPrices>
+    <!--<HelloWorld msg="Crypto Exchange API demo"/>-->
+      <!--<CoinListPrices></CoinListPrices>-->
+      <router-view></router-view>
+
   </div>
 </template>
 
