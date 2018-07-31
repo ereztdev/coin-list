@@ -1,45 +1,72 @@
 <template>
-  <div id="app">
-    <!--<img src="./assets/logo.png">-->
-    <!--<HelloWorld msg="Crypto Exchange API demo"/>-->
-      <!--<CoinListPrices></CoinListPrices>-->
-      <nav>
-          <div class="container">
-              <ul class="nav__left">
+    <div id="app">
+        <!--<img src="./assets/logo.png">-->
+        <!--<HelloWorld msg="Crypto Exchange API demo"/>-->
+        <BodySplit></BodySplit>
 
-                  <!-- Navigation Links -->
-                  <li><router-link to="/">Home</router-link></li>
-                  <li><router-link to="/coin">Coin</router-link></li>
-                  <li><router-link to="/exchange-rate">Exchange Rate</router-link></li>
+        <nav>
+            <div class="container">
+                <ul class="nav__left">
 
-              </ul>
-          </div>
-      </nav>
-      <router-view></router-view>
+                    <!-- Navigation Links -->
+                    <li>
+                        <router-link to="/">Home</router-link>
+                    </li>
+                    <li>
+                        <router-link to="/coin">Coin</router-link>
+                    </li>
+                    <li>
+                        <router-link to="/exchange-rate">Exchange Rate</router-link>
+                    </li>
 
-  </div>
+                </ul>
+            </div>
+        </nav>
+        <router-view></router-view>
+
+    </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-import CoinListPrices from "./components/CoinListPrices";
+    import BodySplit from './components/BodySplit'
 
-export default {
-  name: 'app',
-  components: {
-      CoinListPrices,
-    HelloWorld
-  }
-}
+    export default {
+        name: 'app',
+        components: {
+            BodySplit,
+
+        }
+    }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss">
+    #app {
+    @import url('https://fonts.googleapis.com/css?family=Catamaran:100,300,800|Open+Sans:800');
+        font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-align: center;
+        color: #2c3e50;
+        margin-top: 50px;
+    }
+    $black: #1d1d1d;
+    body{
+        background: $black;
+    }
+    nav{
+        ul{
+            list-style-type: none;
+            li{
+                display: inline-block;
+                margin: 0 25px;
+                a{
+                    font-size: 35px;
+                    font-weight: 600;
+                    text-decoration: none;
+                    color: #fff;
+                }
+            }
+        }
+    }
+
 </style>
