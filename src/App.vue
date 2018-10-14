@@ -2,8 +2,6 @@
     <div id="app">
         <!--<img src="./assets/logo.png">-->
         <!--<HelloWorld msg="Crypto Exchange API demo"/>-->
-        <BodySplit></BodySplit>
-
         <nav>
             <div class="container">
                 <ul class="nav__left">
@@ -34,7 +32,6 @@
         name: 'app',
         components: {
             BodySplit,
-
         }
     }
 </script>

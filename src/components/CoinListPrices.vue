@@ -1,5 +1,6 @@
 <template>
     <div class="container">
+        <BodySplit></BodySplit>
         <div id="exchange_rate_wrapper">
             <div id="price_from">
                 <select class="coin_list coinFrom form-control" name="coin_list" @input="coinFromSelect">
@@ -25,8 +26,12 @@
 
 <script>
     import {mapState} from 'vuex'
+    import BodySplit from '../components/BodySplit'
 
     export default {
+        components: {
+            BodySplit,
+        },
         name: "CoinListPrices",
         mounted() {
             // console.log(this.$store);
