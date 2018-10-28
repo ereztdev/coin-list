@@ -1,7 +1,7 @@
 <template>
     <div class="video--wrapper">
         <video requestFullScreen autoplay loop muted>
-            <source  src="../assets/images/SampleVideo_1280x720_5mb.mp4"/>
+            <!--<source  src="../assets/images/SampleVideo_1280x720_5mb.mp4"/>-->
         </video>
 
     </div>

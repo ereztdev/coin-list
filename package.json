@@ -7,7 +7,9 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "aion-web3": "0.0.3",
     "axios": "^0.18.0",
+    "ripple-lib": "^1.0.2",
     "vue": "^2.5.16",
     "vue-axios": "^2.1.2",
     "vue-router": "^3.0.1",

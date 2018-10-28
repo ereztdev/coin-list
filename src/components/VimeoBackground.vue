@@ -2,8 +2,8 @@
     <div class="container">
         <h1>Vimeo Player</h1>
         <div class="vimeo-wrapper">
-            <iframe src="https://player.vimeo.com/video/76979871?background=1&autoplay=1&loop=1&byline=0&title=0"
-                    frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            <!--<iframe src="https://player.vimeo.com/video/76979871?background=1&autoplay=1&loop=1&byline=0&title=0"-->
+                    <!--frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>-->
         </div>
     </div>
 
